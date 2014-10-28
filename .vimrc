@@ -11,7 +11,7 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set number
-call pathogen#infect()
+execute pathogen#infect('bundle/{}')
 syntax on
 filetype plugin indent on
 filetype on
@@ -38,3 +38,7 @@ filetype indent on " Enable filetype-specific indenting
 filetype plugin on " Enable filetype-specific plugins
 colorscheme desert
 set clipboard=unnamed
+"Setting for filetye python
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4

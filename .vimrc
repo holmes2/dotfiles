@@ -42,3 +42,11 @@ set clipboard=unnamed
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4
 autocmd FileType python set sts=4
+
+"============================================================================
+" Use arrow keys to navigate after a :vimgrep or :helpgrep
+"============================================================================
+nmap <silent> <RIGHT>         :cnext<CR>
+nmap <silent> <RIGHT><RIGHT>  :cnfile<CR><C-G>
+nmap <silent> <LEFT>          :cprev<CR>
+nmap <silent> <LEFT><LEFT>    :cpfile<CR><C-G>

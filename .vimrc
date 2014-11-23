@@ -16,7 +16,6 @@ syntax on
 filetype plugin indent on
 filetype on
 set backspace=indent,eol,start
-set ruler " show the cursor position all the time
 set nocompatible " use vim defaults, not vi defaults
 set shiftwidth=4	" number of spaces to (auto)indent
 set cindent	" automatically indent inner blocks of code in C
@@ -50,3 +49,29 @@ nmap <silent> <RIGHT>         :cnext<CR>
 nmap <silent> <RIGHT><RIGHT>  :cnfile<CR><C-G>
 nmap <silent> <LEFT>          :cprev<CR>
 nmap <silent> <LEFT><LEFT>    :cpfile<CR><C-G>
+
+"============================================================================
+" Make :help appear in a full-screen tab, instead of a window
+"============================================================================
+
+    "Only apply to .txt files...
+    augroup HelpInTabs
+        autocmd!
+        autocmd BufEnter  *.txt   call HelpInNewTab()
+    augroup END
+
+    "Only apply to help files...
+    function! HelpInNewTab ()
+        if &buftype == 'help'
+            "Convert the help window to a tab...
+            execute "normal \<C-W>T"
+        endif
+    endfunction
+
+
+"============================================================================
+" Turn on the ruler in the status line
+"============================================================================
+
+
+    set ruler

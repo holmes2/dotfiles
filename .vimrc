@@ -1,4 +1,3 @@
-" Copyright Professor Andy Meneely. A part of it is taken from his work. 
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -42,6 +41,13 @@ set clipboard=unnamed
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4
 autocmd FileType python set sts=4
+"NerdTree Fixes
+"" Start NERDTree
+autocmd VimEnter * NERDTree
+" Go to previous (last accessed) window.
+autocmd VimEnter * wincmd p
+
+let g:nerdtree_tabs_open_on_console_startup=1
 
 "============================================================================
 " Use arrow keys to navigate after a :vimgrep or :helpgrep

@@ -53,4 +53,6 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter" }, {
 })
 
 vim.cmd[[colorscheme tokyonight]]
+vim.cmd("highlight ColorColumn ctermbg=yellow guibg=yellow")
+vim.opt.colorcolumn = "100"
 

@@ -55,4 +55,24 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter" }, {
 vim.cmd[[colorscheme tokyonight]]
 vim.cmd("highlight ColorColumn ctermbg=yellow guibg=yellow")
 vim.opt.colorcolumn = "100"
+-- For ruby files, set indentation to 2 spaces
+autocmd("FileType", {
+  pattern = "ruby",
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+-- For python files, set indentation to 4 spaces
+autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = true
+  end,
+})
 
